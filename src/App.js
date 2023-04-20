@@ -5,7 +5,7 @@ import Sidebar from "./Components/Sidebar";
 
 export default function Appss() {
    return (
-      <div className="flex">
+      <div className="flex bg-surface-light-bg">
          <div>
             <Sidebar />
          </div>

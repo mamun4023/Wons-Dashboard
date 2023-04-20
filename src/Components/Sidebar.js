@@ -10,6 +10,9 @@ import CalendarIcon from "./Icons/Calendar";
 import MessageIcon from "./Icons/Message";
 import NotificationIcon from "./Icons/Notification";
 import SettingsIcon from "./Icons/Settings";
+import LogoutIcon from "./Icons/Logout";
+import FilterIcon from "../Images/icons/Filter.png";
+import ProfilePic from "../Images/photo/profilePic.png";
 
 export default function Sidebar() {
    const [open, setOpen] = useState(false);
@@ -24,13 +27,13 @@ export default function Sidebar() {
    return (
       <div>
          <div
-            className={` h-screen duration-500 relative border bg-surface-light-neutral ${
+            className={` m-['0px'] h-screen duration-500 relative border bg-surface-light-neutral ${
                open ? "w-[218px]" : "w-[80px]"
             }`}
          >
             <div
                onClick={() => setOpen(!open)}
-               className=" absolute -right-2 bg-primary-light p-1 cursor-pointer rounded-full px-2 hover:bg-primary-dark"
+               className=" absolute top-3 -right-2 bg-primary-light p-1 cursor-pointer rounded-full px-2 hover:bg-primary-dark"
             >
                <p className="text-xs text-white ">{open ? "<" : ">"}</p>
             </div>
@@ -222,9 +225,9 @@ export default function Sidebar() {
                                     isActive("/message")
                                        ? "bg-primary-transparent"
                                        : null
-                                 } hover:bg-primary-transparent  `}
+                                 } hover:bg-primary-transparent`}
                               >
-                                 <span className="  absolute top-3">
+                                 <span className=" absolute top-3 pl-[3px]">
                                     <MessageIcon
                                        height={24}
                                        width={24}
@@ -324,7 +327,49 @@ export default function Sidebar() {
                   </li>
                </ul>
             </div>
+            <div className=" flex justify-center mt-10">
+               <Filter open={open} />
+            </div>
          </div>
       </div>
    );
 }
+
+const Filter = ({ open }) => {
+   return (
+      <div>
+         <div
+            className={` ${!open && "scale-0"} shadow-lg duration-300 relative`}
+         >
+            <div className=" bg-primary-transparent pb-5 w-[168px] h-[180px] rounded-lg flex justify-center">
+               <img className=" mix-blend-multiply " src={FilterIcon} />
+            </div>
+            <div className=" absolute bottom-2 left-6 ">
+               <button className="  font-regular text-[12px] text-white p-2 px-6 shadow-sm rounded-lg bg-primary-light">
+                  Upgrade Now
+               </button>
+            </div>
+         </div>
+         <div
+            className={` ${
+               open ? "justify-between" : "justify-center"
+            } flex  items-center`}
+         >
+            <div className={` ${open ? "flex items-center" : ""}  mt-8 `}>
+               <img src={ProfilePic} className=" h-[45px] w-[43px]" />
+               <div className={` ${!open && "scale-0"}`}>
+                  <h6 className=" font-regular text-text-dark text-[12px]">
+                     Easin Arafat
+                  </h6>
+                  <p className=" font-regular text-text-light text-[12px]">
+                     Free Account
+                  </p>
+               </div>
+            </div>
+            <div className="mt-12">
+               <LogoutIcon height={40} width={40} />
+            </div>
+         </div>
+      </div>
+   );
+};
