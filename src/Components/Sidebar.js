@@ -352,11 +352,41 @@ const Filter = ({ open }) => {
          </div>
          <div
             className={` ${
-               open ? "justify-between" : "justify-center"
+               open ? "flex" : "flex-none"
+            } justify-between items-center mt-10`}
+         >
+            <div className="flex justify-center">
+               <img src={ProfilePic} className=" h-[45px] w-[43px]" />
+
+               {open && (
+                  <div className="mt-2 p-1">
+                     <h6 className=" font-regular text-text-dark text-[12px]">
+                        Easin Arafat
+                     </h6>
+                     <p className=" font-regular text-text-light text-[12px]">
+                        Free Account
+                     </p>
+                  </div>
+               )}
+            </div>
+            <div className={` flex justify-center mt-6 pl-4 `}>
+               <LogoutIcon height={40} width={40} />
+            </div>
+         </div>
+
+         {/* <div
+            className={` ${
+               open ? "justify-between" : "flex-none"
             } flex  items-center`}
          >
-            <div className={` ${open ? "flex items-center" : ""}  mt-8 `}>
-               <img src={ProfilePic} className=" h-[45px] w-[43px]" />
+            <div
+               className={` ${
+                  open ? "flex items-center" : " flex-none"
+               }  mt-8 `}
+            >
+               <div className="flex justify-center">
+                  <img src={ProfilePic} className=" h-[45px] w-[43px]" />
+               </div>  
                <div className={` ${!open && "scale-0"}`}>
                   <h6 className=" font-regular text-text-dark text-[12px]">
                      Easin Arafat
@@ -369,7 +399,7 @@ const Filter = ({ open }) => {
             <div className="mt-12">
                <LogoutIcon height={40} width={40} />
             </div>
-         </div>
+         </div> */}
       </div>
    );
 };
