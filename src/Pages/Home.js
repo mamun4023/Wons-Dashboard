@@ -1,19 +1,133 @@
+import Chart from "../Components/Graph/Chart";
 import MainLayout from "../Layouts/MainLayout";
+import ReportChart from "../Sections/Home/Report";
+import DropList from "../Components/DropList";
+import Analytics from "../Sections/Home/Analytics";
+
 export default function Home() {
    return (
       <MainLayout>
          <div className="p-2 flex justify-between">
             <div>
                <h2 className="text-[25px] text-text-dark font-bold">
-                  Product Analytics{" "}
+                  Dashboard
                </h2>
             </div>
             <div>
-               <button className="  p-2 px-6 font-regular text-white rounded-md  bg-primary-light">
-                  Add Product +
-               </button>
+               <DropList />
             </div>
          </div>
+
+         <div className="md:flex justify-between ">
+            <div className="bg-white m-2 flex p-4 w-full h-[116px] justify-left pl-8 items-center shadow-sm ">
+               <div className="w-[56px] h-[56px] flex justify-center items-center rounded-full bg-primary-transparent">
+                  <svg
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M12 20.9998L3.847 13.2408C2.656 12.1078 2 10.5988 2 8.99183C2 7.38483 2.656 5.87583 3.847 4.74183C6.067 2.62883 9.552 2.43883 12 4.16883C14.448 2.43883 17.933 2.62883 20.153 4.74183C21.344 5.87583 22 7.38483 22 8.99183C22 10.5988 21.344 12.1078 20.153 13.2408L12 20.9998Z"
+                        fill="#3A36DB"
+                     />
+                  </svg>
+               </div>
+               <div className="pl-6">
+                  <h4 className="text-[22px] font-bold text-text-dark">178+</h4>
+                  <p className="text-[14px] font-regular text-text-light">
+                     Save Products
+                  </p>
+               </div>
+            </div>
+
+            <div className="bg-white m-2 flex p-4 w-full min-w-[27px] h-[116px] justify-left pl-8 items-center shadow-sm ">
+               <div className="w-[56px] h-[56px] flex justify-center items-center rounded-full bg-info-transparent">
+                  <svg
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M15.164 6.08252C15.4791 6.08684 15.7949 6.09117 16.1119 6.09441C19.5172 6.09441 22 8.52216 22 11.8748V16.1811C22 19.5337 19.5172 21.9615 16.1119 21.9615C14.7478 21.9904 13.3837 22 12.0098 22C10.6359 22 9.25221 21.9904 7.88813 21.9615C4.48283 21.9615 2 19.5337 2 16.1811V11.8748C2 8.52216 4.48283 6.09441 7.89794 6.09441C9.18351 6.07514 10.4985 6.05588 11.8332 6.05588V5.8921C11.8332 5.22736 11.2738 4.68786 10.6065 4.68786H9.63494C8.52601 4.68786 7.62316 3.80154 7.62316 2.72254C7.62316 2.32755 7.95682 2 8.35918 2C8.77134 2 9.09519 2.32755 9.09519 2.72254C9.09519 3.01156 9.34053 3.24277 9.63494 3.24277H10.6065C12.0883 3.25241 13.2954 4.43738 13.3052 5.88247V6.06551C13.9239 6.06551 14.5425 6.074 15.164 6.08252ZM10.8518 14.7457H9.82139V15.7669C9.82139 16.1618 9.48773 16.4894 9.08538 16.4894C8.67321 16.4894 8.34936 16.1618 8.34936 15.7669V14.7457H7.30913C6.90677 14.7457 6.57311 14.4277 6.57311 14.0231C6.57311 13.6281 6.90677 13.3006 7.30913 13.3006H8.34936V12.289C8.34936 11.894 8.67321 11.5665 9.08538 11.5665C9.48773 11.5665 9.82139 11.894 9.82139 12.289V13.3006H10.8518C11.2542 13.3006 11.5878 13.6281 11.5878 14.0231C11.5878 14.4277 11.2542 14.7457 10.8518 14.7457ZM15.0226 13.1175H15.1207C15.5231 13.1175 15.8567 12.7996 15.8567 12.395C15.8567 12 15.5231 11.6724 15.1207 11.6724H15.0226C14.6104 11.6724 14.2866 12 14.2866 12.395C14.2866 12.7996 14.6104 13.1175 15.0226 13.1175ZM16.7007 16.4316H16.7988C17.2012 16.4316 17.5348 16.1137 17.5348 15.7091C17.5348 15.3141 17.2012 14.9865 16.7988 14.9865H16.7007C16.2875 14.9865 15.9647 15.3141 15.9647 15.7091C15.9647 16.1137 16.2875 16.4316 16.7007 16.4316Z"
+                        fill="#2FE6A7"
+                     />
+                  </svg>
+               </div>
+               <div className="pl-6">
+                  <h4 className="text-[22px] font-bold text-text-dark">20+</h4>
+                  <p className="text-[14px] font-regular text-text-light">
+                     Stock Products
+                  </p>
+               </div>
+            </div>
+
+            <div className="bg-white m-2 flex p-4 w-full h-[116px] justify-left pl-8 items-center shadow-sm ">
+               <div className="w-[56px] h-[56px] flex justify-center items-center rounded-full bg-secondary-transparent">
+                  <svg
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.9303 7C16.9621 6.92913 16.977 6.85189 16.9739 6.77432H17C16.8882 4.10591 14.6849 2 12.0049 2C9.325 2 7.12172 4.10591 7.00989 6.77432C6.9967 6.84898 6.9967 6.92535 7.00989 7H6.93171C5.65022 7 4.28034 7.84597 3.88264 10.1201L3.1049 16.3147C2.46858 20.8629 4.81062 22 7.86853 22H16.1585C19.2075 22 21.4789 20.3535 20.9133 16.3147L20.1444 10.1201C19.676 7.90964 18.3503 7 17.0865 7H16.9303ZM15.4932 7C15.4654 6.92794 15.4506 6.85153 15.4497 6.77432C15.4497 4.85682 13.8899 3.30238 11.9657 3.30238C10.0416 3.30238 8.48184 4.85682 8.48184 6.77432C8.49502 6.84898 8.49502 6.92535 8.48184 7H15.4932ZM9.097 12.1486C8.60889 12.1486 8.21321 11.7413 8.21321 11.2389C8.21321 10.7366 8.60889 10.3293 9.097 10.3293C9.5851 10.3293 9.98079 10.7366 9.98079 11.2389C9.98079 11.7413 9.5851 12.1486 9.097 12.1486ZM14.002 11.2389C14.002 11.7413 14.3977 12.1486 14.8858 12.1486C15.3739 12.1486 15.7696 11.7413 15.7696 11.2389C15.7696 10.7366 15.3739 10.3293 14.8858 10.3293C14.3977 10.3293 14.002 10.7366 14.002 11.2389Z"
+                        fill="#FF69B4"
+                     />
+                  </svg>
+               </div>
+               <div className="pl-6">
+                  <h4 className="text-[22px] font-bold text-text-dark">190+</h4>
+                  <p className="text-[14px] font-regular text-text-light">
+                     Sales Products
+                  </p>
+               </div>
+            </div>
+            <div className="bg-white m-2 flex p-4 w-full h-[116px] justify-left pl-8 items-center shadow-sm ">
+               <div className="w-[56px] h-[56px] flex justify-center items-center rounded-full bg-primary-transparent">
+                  <svg
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M10.4453 1.82344C9.64089 1.82344 8.95655 2.38242 8.76445 3.13584H15.2237C15.0316 2.38242 14.3472 1.82344 13.5428 1.82344H10.4453ZM17.0485 3.13517H19.4257C21.947 3.13517 24 5.21314 24 7.76502C24 7.76502 23.928 8.84532 23.904 10.3497C23.9016 10.4688 23.8439 10.5855 23.7491 10.6559C23.1716 11.0825 22.6433 11.4349 22.5953 11.4592C20.6023 12.7959 18.2863 13.7364 15.8191 14.2043C15.6582 14.2359 15.4998 14.152 15.4181 14.0086C14.7266 12.8105 13.4347 12.0303 11.994 12.0303C10.5629 12.0303 9.25903 12.802 8.54707 14.0013C8.46423 14.1423 8.30815 14.2237 8.14847 14.1933C5.70165 13.7243 3.38569 12.7849 1.4047 11.4713L0.252126 10.6693C0.156078 10.6086 0.096048 10.4992 0.096048 10.3777C0.06003 9.75793 0 7.76502 0 7.76502C0 5.21314 2.05303 3.13517 4.57429 3.13517H6.93947C7.16758 1.37316 8.64432 0 10.4452 0H13.5428C15.3437 0 16.8204 1.37316 17.0485 3.13517ZM23.5917 12.9769L23.5437 13.0012C21.1185 14.6296 18.201 15.7111 15.1395 16.1607C14.7073 16.2215 14.275 15.942 14.155 15.5045C13.8908 14.5081 13.0384 13.8519 12.0179 13.8519H12.0059H11.9819C10.9614 13.8519 10.109 14.5081 9.84482 15.5045C9.72476 15.942 9.29255 16.2215 8.86033 16.1607C5.7988 15.7111 2.88134 14.6296 0.456131 13.0012C0.444125 12.9891 0.324065 12.9162 0.228017 12.9769C0.119963 13.0377 0.119963 13.1835 0.119963 13.1835L0.204005 19.3809C0.204005 21.9328 2.24503 23.9986 4.76629 23.9986H19.2215C21.7428 23.9986 23.7838 21.9328 23.7838 19.3809L23.8798 13.1835C23.8798 13.1835 23.8798 13.0377 23.7718 12.9769C23.7118 12.9405 23.6397 12.9526 23.5917 12.9769ZM12.8943 18.0687C12.8943 18.5791 12.4981 18.9801 11.9938 18.9801C11.5016 18.9801 11.0934 18.5791 11.0934 18.0687V16.5011C11.0934 16.0029 11.5016 15.5898 11.9938 15.5898C12.4981 15.5898 12.8943 16.0029 12.8943 16.5011V18.0687Z"
+                        fill="#3A36DB"
+                     />
+                  </svg>
+               </div>
+               <div className="pl-6">
+                  <h4 className="text-[22px] font-bold text-text-dark">12+</h4>
+                  <p className="text-[14px] font-regular text-text-light">
+                     Job Application
+                  </p>
+               </div>
+            </div>
+         </div>
+
+         <div className="grid grid-cols-12">
+            <div className="col-span-7 m-4 ml-0">
+               <ReportChart />
+            </div>
+            <div className=" col-span-5 m-4">
+               <Analytics />
+            </div>
+         </div>
+         <div>{/* <Chart /> */}</div>
       </MainLayout>
    );
 }
